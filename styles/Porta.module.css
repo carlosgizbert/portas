@@ -9,10 +9,12 @@
 
 .estrutura {
   display: flex;
+  flex-direction: column-reverse;
   flex-grow: 1;
   border-top: 4px solid brown;
   border-left: 4px solid brown;
   border-right: 4px solid brown;
+  background-color: #0005;
   width: 90%;
 }
 
@@ -47,6 +49,11 @@
   width: 1.5rem;
   border-radius: 50%;
   background-color: #ffffff;
+}
+
+.macaneta:hover {
+  cursor: pointer;
+  background-color: yellow;
 }
 
 .selecionada {
