@@ -1,24 +1,26 @@
-import Porta from '../components/Porta';
-import PortaModel from '../model/porta';
-import { useState } from 'react';
-import { atualizarPortas, criarPortas } from './../functions/portas';
-export default function Home() {
+import Cartao from './../components/Cartao';
+import styles from '../styles/Formulario.module.css'
+import Link from 'next/link'
 
-  const [portas, setPortas] = useState(criarPortas(5, 1))
 
-  const RenderizarPortas = () => {
-    return portas.map((porta) => {
-      return <Porta 
-      key={porta.numero} 
-      value={porta} 
-      onChange={novaPorta => setPortas(atualizarPortas(portas, novaPorta))}
-      />
-    })
-  }
+export default function Formulario() {
 
   return (
-    <div style={{display: "flex"}}>
-      {RenderizarPortas()}
+    <div className={styles.formulario}>
+      <div>
+      <Cartao bgcolor="#c0392c">
+        <h1>Monty Hall</h1>
+      </Cartao>
+      <Cartao></Cartao>
+      </div>
+      <div>
+      <Cartao></Cartao>
+      <Cartao bgcolor="#28a085">
+        <Link href={`/jogo/4/2`} passHref>
+          <h2 className={styles.link}>Iniciar</h2>
+        </Link>
+      </Cartao>
+      </div>
     </div>
   )
 }
